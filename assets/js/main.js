@@ -42,3 +42,19 @@ for(let i = 0; i < 5; i++){
 console.log(items);
 //Aggiungo nell'elemento <ul>, la lista dei numeri
 numberListElement.innerHTML = items;
+
+//const buttonElement = document.getElementById("button");
+const userInputElement = document.getElementById("user-input");
+
+//Uso una timing function
+setTimeout(addInput, 3000);
+
+//Funzione per aggiungere gli input in pagina
+function addInput(){
+  userInputElement.innerHTML = `
+  <input>
+  <input>
+  <input>
+  <input>
+  <input>
+`};
