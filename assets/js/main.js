@@ -38,24 +38,9 @@ for(let i = 0; i < 5; i++){
 console.log(numbers);
 
 const userNumbers = [];
-for(let i = 0; i < 5; i++){
-  //userNumbers.push(Number(prompt("Inserisci il numero che hai visto")));
-}
+
 console.log(userNumbers);
 
-let findCount = 0;
-let findedNumbers = "";
-for(let i = 0; i < numbers.length; i++){
-  if(userNumbers.includes(numbers[i])){
-    console.log(`Il numero ${numbers[i]} c'è`);
-    findedNumbers += numbers[i];
-    findCount++;
-  } else{
-  console.log("Non c'è nessun numero");
-  }
-}
-console.log(`Hai trovato ${findCount} numeri`);
-console.log(`Hai trovato questi numeri: ${findedNumbers.split("")}`);
 
 
 //Creo una variabile vuota dove inserire il nuovo elemento
@@ -81,23 +66,45 @@ const clock = setInterval(() => {
   }
 }, 1000)
 
+let findCount = 0;
+let findedNumbers = "";
+
 setTimeout(() => {
   const number1Element = document.getElementById("number1");
-
+  
   const number2Element = document.getElementById("number2");
-
+  
   const number3Element = document.getElementById("number3");
-
+  
   const number4Element = document.getElementById("number4");
-
+  
   const number5Element = document.getElementById("number5");
-
+  
   const formElement = document.getElementById("user-input");
   formElement.classList.remove("d-none");
-
+  
   const buttonElement = document.getElementById("button");
-  buttonElement.addEventListener("click", () => {
-    userNumbers.push(number1Element.value, number2Element.value, number3Element.value, number4Element.value, number5Element.value);
+  buttonElement.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    userNumbers.push(
+      Number(number1Element.value),
+      Number(number2Element.value),
+      Number(number3Element.value),
+      Number(number4Element.value),
+      Number(number5Element.value)
+    );
     console.log(userNumbers);    
+    for(let i = 0; i < numbers.length; i++){
+      if(userNumbers.includes(numbers[i])){
+        console.log(`Il numero ${numbers[i]} c'è`);
+        findedNumbers += numbers[i];
+        findCount++;
+      } else{
+      console.log(`Il numero ${userNumbers[i]} non c'è`);
+      }
+    }
+    console.log(`Hai trovato ${findCount} numeri`);
+    console.log(`Hai trovato questi numeri: ${findedNumbers.split("")}`);
   })
-}, 310)
+}, 31000)
