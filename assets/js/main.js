@@ -31,7 +31,34 @@ function randomNumber(){
   return Math.ceil(Math.random() * 10);
 }
 
-//Creo una variabile vuota dove inserire il nuovo elemento
+const numbers = [];
+for(let i = 0; i < 5; i++){
+  numbers.push(randomNumber());
+}
+console.log(numbers);
+
+const userNumbers = [];
+for(let i = 0; i < 5; i++){
+  userNumbers.push(Number(prompt("Inserisci il numero che hai visto")));
+}
+console.log(userNumbers);
+
+let findCount = 0;
+let findedNumbers = "";
+for(let i = 0; i < numbers.length; i++){
+  if(userNumbers.includes(numbers[i])){
+    console.log(`Il numero ${numbers[i]} c'è`);
+    findedNumbers += numbers[i];
+    findCount++;
+  } else{
+  console.log("Non c'è nessun numero");
+  }
+}
+console.log(`Hai trovato ${findCount} numeri`);
+console.log(`Hai trovato questi numeri: ${findedNumbers.split("")}`);
+
+
+/* //Creo una variabile vuota dove inserire il nuovo elemento
 let items = "";
 //Ciclo per generare 5 numeri random
 for(let i = 0; i < 5; i++){
@@ -57,4 +84,4 @@ function addInput(){
   <input>
   <input>
   <input>
-`};
+`}; */
