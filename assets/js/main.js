@@ -26,4 +26,19 @@ NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che 
 //Selezione degli elementi dove andranno inseriti i 5 numeri casuali
 const numberListElement = document.getElementById("number-list");
 
+//Funzione che genera un numero casuale
+function randomNumber(){
+  return Math.ceil(Math.random() * 10);
+}
 
+//Creo una variabile vuota dove inserire il nuovo elemento
+let items = "";
+//Ciclo per generare 5 numeri random
+for(let i = 0; i < 5; i++){
+  console.log(randomNumber());
+  const number = randomNumber();
+  items += `<li>${number}</li>`;
+}
+console.log(items);
+//Aggiungo nell'elemento <ul>, la lista dei numeri
+numberListElement.innerHTML = items;
