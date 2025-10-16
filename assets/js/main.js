@@ -13,13 +13,17 @@ NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che 
 //Creo un bottone per confermare l'inserimento dei numeri
 
 /* ========== JS ========== */
-//Selezione degli elementi dove andranno inseriti i 5 numeri casuali
 //Creare una timing functions, che, passati 30s
-  //Fa sparire i numeri
-  //Fa apparire 5 input
+//Fa sparire i numeri
+//Fa apparire 5 input
 //Creare un evento click del bottone
-  //Controllo se il valore degli input corrisponde al valore dei numeri scomparsi
-    //Se trova una corrispondenza
-      //Conto il numero e lo stampo
-    //Se non trova corrispondenze
-      //Stampo un messaggio
+//Controllo se il valore degli input corrisponde al valore dei numeri scomparsi
+//Se trova una corrispondenza
+//Conto il numero e lo stampo
+//Se non trova corrispondenze
+//Stampo un messaggio
+
+//Selezione degli elementi dove andranno inseriti i 5 numeri casuali
+const numberListElement = document.getElementById("number-list");
+
+
