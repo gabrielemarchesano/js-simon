@@ -39,7 +39,7 @@ console.log(numbers);
 
 const userNumbers = [];
 for(let i = 0; i < 5; i++){
-  userNumbers.push(Number(prompt("Inserisci il numero che hai visto")));
+  //userNumbers.push(Number(prompt("Inserisci il numero che hai visto")));
 }
 console.log(userNumbers);
 
@@ -58,19 +58,32 @@ console.log(`Hai trovato ${findCount} numeri`);
 console.log(`Hai trovato questi numeri: ${findedNumbers.split("")}`);
 
 
-/* //Creo una variabile vuota dove inserire il nuovo elemento
+//Creo una variabile vuota dove inserire il nuovo elemento
 let items = "";
 //Ciclo per generare 5 numeri random
-for(let i = 0; i < 5; i++){
-  console.log(randomNumber());
-  const number = randomNumber();
-  items += `<li>${number}</li>`;
+for(let i = 0; i < numbers.length; i++){
+  items +=  `<li>${numbers[i]}</li>`;
 }
-console.log(items);
+
 //Aggiungo nell'elemento <ul>, la lista dei numeri
 numberListElement.innerHTML = items;
 
-//const buttonElement = document.getElementById("button");
+const timerElement = document.getElementById("timer");
+let counter = 30;
+
+timerElement.innerHTML = `Timer: ${counter--}s`;
+const clock = setInterval(() => {
+  if(counter < 0){
+    clearInterval(clock);
+  } else{
+    timerElement.innerHTML = `Timer: ${counter--}s`;
+  }
+}, 1000)
+setTimeout(() => {
+  numberListElement.classList.add("d-none");
+}, 30000)
+
+/* //const buttonElement = document.getElementById("button");
 const userInputElement = document.getElementById("user-input");
 
 //Uso una timing function
@@ -84,4 +97,4 @@ function addInput(){
   <input>
   <input>
   <input>
-`}; */
+`};  */
