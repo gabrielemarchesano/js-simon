@@ -62,7 +62,7 @@ console.log(`Hai trovato questi numeri: ${findedNumbers.split("")}`);
 let items = "";
 //Ciclo per generare 5 numeri random
 for(let i = 0; i < numbers.length; i++){
-  items +=  `<li>${numbers[i]}</li>`;
+  items += `<li>${numbers[i]}</li>`;
 }
 
 //Aggiungo nell'elemento <ul>, la lista dei numeri
@@ -74,27 +74,30 @@ let counter = 30;
 timerElement.innerHTML = `Timer: ${counter--}s`;
 const clock = setInterval(() => {
   if(counter < 0){
+    numberListElement.classList.add("d-none");
     clearInterval(clock);
   } else{
     timerElement.innerHTML = `Timer: ${counter--}s`;
   }
 }, 1000)
+
 setTimeout(() => {
-  numberListElement.classList.add("d-none");
-}, 30000)
+  const number1Element = document.getElementById("number1");
 
-/* //const buttonElement = document.getElementById("button");
-const userInputElement = document.getElementById("user-input");
+  const number2Element = document.getElementById("number2");
 
-//Uso una timing function
-setTimeout(addInput, 3000);
+  const number3Element = document.getElementById("number3");
 
-//Funzione per aggiungere gli input in pagina
-function addInput(){
-  userInputElement.innerHTML = `
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-`};  */
+  const number4Element = document.getElementById("number4");
+
+  const number5Element = document.getElementById("number5");
+
+  const formElement = document.getElementById("user-input");
+  formElement.classList.remove("d-none");
+
+  const buttonElement = document.getElementById("button");
+  buttonElement.addEventListener("click", () => {
+    userNumbers.push(number1Element.value, number2Element.value, number3Element.value, number4Element.value, number5Element.value);
+    console.log(userNumbers);    
+  })
+}, 310)
