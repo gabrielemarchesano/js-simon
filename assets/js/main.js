@@ -30,33 +30,35 @@ const numberListElement = document.getElementById("number-list");
 function randomNumber(){
   return Math.ceil(Math.random() * 10);
 }
-
+//Creo un array vuoto per i numeri casuali
 const numbers = [];
+//Ciclo per aggiungere 5 numeri nell'array
 for(let i = 0; i < 5; i++){
   numbers.push(randomNumber());
 }
 console.log(numbers);
 
-const userNumbers = [];
-
-console.log(userNumbers);
-
-
-
-//Creo una variabile vuota dove inserire il nuovo elemento
+//Creo una variabile vuota dove inserire un nuovo list item
 let items = "";
-//Ciclo per generare 5 numeri random
+//Scorro l'array per selezionare l'elemento
 for(let i = 0; i < numbers.length; i++){
+  //Inserisco nella variabile l'elemento in posizione i 
   items += `<li>${numbers[i]}</li>`;
 }
 
 //Aggiungo nell'elemento <ul>, la lista dei numeri
 numberListElement.innerHTML = items;
 
+//Seleziono l'elemento del timer
 const timerElement = document.getElementById("timer");
+
+//Setto il contatore
 let counter = 30;
 
+//Stampo il timer in pagina
 timerElement.innerHTML = `Timer: ${counter--}s`;
+
+//Creo una timing function per il conto alla rovescia di 30s
 const clock = setInterval(() => {
   if(counter < 0){
     numberListElement.classList.add("d-none");
@@ -68,6 +70,7 @@ const clock = setInterval(() => {
 
 let findCount = 0;
 let findedNumbers = "";
+const userNumbers = [];
 
 setTimeout(() => {
   const number1Element = document.getElementById("number1");
@@ -101,7 +104,7 @@ setTimeout(() => {
         findedNumbers += numbers[i];
         findCount++;
       } else{
-      console.log(`Il numero ${userNumbers[i]} non c'è`);
+      console.log(`Il numero ${numbers[i]} non c'è`);
       }
     }
     console.log(`Hai trovato ${findCount} numeri`);
